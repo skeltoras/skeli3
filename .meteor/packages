@@ -12,7 +12,6 @@ iron:router
 less
 nemo64:bootstrap
 accounts-password
-chrismbeckett:fontawesome4
 accounts-ui
 alanning:roles
 aldeed:simple-schema
@@ -37,3 +36,5 @@ meteorhacks:npm
 
 
 npm-container
+andruschka:bootstrap-image-gallery
+summernote:summernote

@@ -1,0 +1,134 @@
+<template name="rentingsSingle">
+<div class="row">
+  <div class="col-sm-12">
+    {{#if headerSlider}}<img class="headerimg" src="/img/oberstdorf2.jpg">{{else}}Bild{{/if}}
+  </div>
+</div>
+<div class="spacer-20"></div>
+<div class="row">
+  <div class="col-sm-3">
+    <h3>{{rentingsName}}</h3>
+    <p>
+      Bereich: <a href="">Vermietung</a><br>
+      Land: <a href="">{{rentingsCountry}}</a><br>
+      Region: <a href="">{{rentingsRegion}}</a>
+    </p>
+    <h3>Objektadresse</h3>
+    <p>
+      {{street}}<br>
+      {{#if additional}}{{additional}}<br>{{/if}}
+      {{plz}} {{city}}<br>
+      {{rentingsCountry}}
+    </p>
+    <h3>Kontakt Vermieter</h3>
+    <p>
+      {{#with getCustomer}}
+        {{customerName}}<br>
+        {{street}}<br>
+        {{#if additional}}{{additional}}<br>{{/if}}
+        {{plz}} {{city}}<br>
+        {{country}}<br>
+        {{#if telephone}}<i class="fa fa-phone"></i> {{telephone}}<br>{{/if}}
+        {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
+      {{/with}}
+    </p>
+    {{#if rentingsUrl}}
+      <h3>Website</h3>
+      <p>
+        <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>
+      </p>
+    {{/if}}
+    {{#if socialMedia}}
+      <h3>Social Media</h3>
+      <p>
+        <span class="socialIcons">
+          {{#with getCustomer}}
+            {{#if socialFacebook}}<a href="{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
+            {{#if socialGplus}}<a href="{{socialGplus}}" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
+            {{#if socialTwitter}}<a href="{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
+            {{#if socialYoutube}}<a href="{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
+          {{/with}}
+        </span> 
+      </p>
+    {{/if}}
+    {{#if gallery}}
+      <h3>Galerie</h3>
+      kommt noch...
+    {{/if}}
+    {{#if video}}
+      <h3>Video</h3>
+      <p>
+        kommt noch...
+      </p>
+    {{/if}}
+  </div>  
+  <div class="col-sm-9">
+    <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">...</div>
+    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+  </div>
+  </div>
+</div>
+</template>
+
+
+
+<template name="gallery">
+  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- >
+<div id="links">
+    <a href="/img/lenggries-ski.jpg" title="Banana" data-gallery>
+        <img src="/img/lenggries-ski.jpg" alt="Banana">
+    </a>
+    <a href="/img/oberstdorf1.jpg" title="Apple" data-gallery>
+        <img src="/img/oberstdorf1.jpg" alt="Apple">
+    </a>
+    <a href="/img/oberstdorf2.jpg" title="Orange" data-gallery>
+        <img src="/img/oberstdorf2.jpg" alt="Orange">
+    </a>
+</div> -->
+</template>

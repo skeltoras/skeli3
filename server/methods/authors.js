@@ -1,3 +1,4 @@
+/*
 Meteor.methods({
   newAuthor: function(author) {
     var authorNewId = Authors.insert(author);
@@ -22,3 +23,4 @@ Meteor.methods({
     }    
   },
 })
+*/
