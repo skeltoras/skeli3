@@ -2,6 +2,11 @@
 Meteor.publish('customers', function() {
   return Customers.find();
 });
+
 Meteor.publish('rentings', function() {
   return Rentings.find();
+});
+
+Meteor.publish('portals', function() {
+  return Portals.find();
 });

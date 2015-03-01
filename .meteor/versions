@@ -81,6 +81,7 @@ mongo-livedata@1.0.7
 mrt:mongo-counter@1.1.0
 mrt:pagination@1.1.0
 natestrauser:select2@3.5.1
+natestrauser:x-editable-bootstrap@1.5.2_2
 nemo64:bootstrap@3.3.1_1
 nemo64:bootstrap-data@3.3.1_1
 npm-bcrypt@0.7.7

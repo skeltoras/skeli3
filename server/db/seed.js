@@ -35,23 +35,24 @@ if (Customers.find().count() === 0) {
       socialGplus: socialGplus,
       socialYoutube: socialYoutube,
       notes: notes,
-      portals: [{date: new Date().getTime(), id: 'Buch angelegt'}],
+      portals: [{date: new Date().getTime(), name: 'Vermietung'}],
       submitted: submitted,
       updatedAt: updatedAt
     });
     
     Rentings.insert({
       customerId: customerId,
-      packageS: false,
-      packageM: false,
-      packageL: false,
-      packageXL: true,
-      addText1: true,
-      addText2: true,
-      headerImg: false,
-      headerSlider: true,
-      gallery: true,
-      video: true,
+      hasPackageS: false,
+      hasPackageM: false,
+      hasPackageL: false,
+      hasPackageXL: true,
+      hasAddText1: true,
+      hasAddText2: true,
+      hasHeaderImg: false,
+      hasHeaderSlider: true,
+      hasGalleryS: false,
+      hasGalleryM: true,
+      hasVideo: true,      
       socialMedia: true,
       rentingsBegin: submitted,
       rentingsEnd: submitted,
@@ -64,8 +65,21 @@ if (Customers.find().count() === 0) {
       rentingsRegion: 'Schwarzwald',
       rentingsCountry: 'Deutschland',
       submitted: submitted,
-      updatedAt: submitted
+      updatedAt: submitted  
     });
     
   }
+};
+
+if (Portals.find().count() === 0) {
+  Portals.insert({
+    portalName: 'Reisen',    
+    submitted: new Date().getTime(),
+    updatedAt: new Date().getTime()
+  });
+  Portals.insert({
+    portalName: 'Vermietungen',    
+    submitted: new Date().getTime(),
+    updatedAt: new Date().getTime()
+  });
 }
