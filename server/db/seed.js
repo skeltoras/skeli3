@@ -35,7 +35,7 @@ if (Customers.find().count() === 0) {
       socialGplus: socialGplus,
       socialYoutube: socialYoutube,
       notes: notes,
-      portals: [{date: new Date().getTime(), name: 'Vermietung'}],
+      portals: [{date: new Date().getTime(), name: 'Vermietungen'}],
       submitted: submitted,
       updatedAt: updatedAt
     });

@@ -1,0 +1,93 @@
+<template name="tabBasics">  
+  <form class="form-horizontal" role="form" id="formBasics">             
+    <fieldset>      
+      <!-- customerName -->      
+      <div class="form-group">        
+        <label for="customerName" class="col-sm-3 control-label">Kunde
+        </label>        
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="customerName" name="customerName" value="{{customerName}}">        
+        </div>      
+      </div>    
+    </fieldset>              
+    <!-- street -->              
+    <div class="form-group form-group-sm">                
+      <label for="graduate" class="col-sm-3 control-label">Strasse
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="text" class="form-control" id="street" name="street" value="{{street}}">                
+      </div>              
+    </div>              
+    <!-- additional -->              
+    <div class="form-group form-group-sm">                
+      <label for="additional" class="col-sm-3 control-label">Zusatz
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="text" class="form-control" id="additional" name="additional" value="{{additional}}">                
+      </div>              
+    </div>              
+    <!-- plz -->              
+    <div class="form-group form-group-sm">                
+      <label for="plz" class="col-sm-3 control-label">PLZ
+      </label>                
+      <div class="col-sm-4">                  
+        <input type="text" class="form-control" id="plz" name="plz" value="{{plz}}">                
+      </div>              
+    </div>              
+    <!-- city -->              
+    <div class="form-group form-group-sm">                
+      <label for="city" class="col-sm-3 control-label">Ort
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="text" class="form-control" id="city" name="city" value="{{city}}">                
+      </div>              
+    </div>              
+    <!-- country -->              
+    <div class="form-group form-group-sm">                
+      <label for="country" class="col-sm-3 control-label">Land
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="text" class="form-control" id="country" name="country" value="{{country}}">                
+      </div>              
+    </div>              
+    <!-- telephone -->              
+    <div class="form-group form-group-sm">                
+      <label for="telephone" class="col-sm-3 control-label">Telefon
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="text" class="form-control" id="telephone" name="telephone" value="{{telephone}}">                
+      </div>              
+    </div>              
+    <!-- telefax -->              
+    <div class="form-group form-group-sm">                
+      <label for="telefax" class="col-sm-3 control-label">Fax
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="text" class="form-control" id="telefax" name="telefax" value="{{telefax}}">                
+      </div>              
+    </div>              
+    <!-- emailOff -->              
+    <div class="form-group form-group-sm">                
+      <label for="emailOff" class="col-sm-3 control-label">Email Büro
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="email" class="form-control" id="emailOff" name="emailOff" value="{{emailOff}}">                
+      </div>              
+    </div>              
+    <!-- url -->              
+    <div class="form-group form-group-sm">                
+      <label for="url" class="col-sm-3 control-label">Website
+      </label>                
+      <div class="col-sm-9">                  
+        <input type="url" class="form-control" id="url" name="url" value="{{url}}">                
+      </div>              
+    </div>      
+    <!-- buttons -->          
+    <div class="control-group">            
+      <div class="controls">              
+        <input type="submit" value="Kontakt ändern" class="btn btn-default"/>              
+        <input type="reset" value="Abbrechen" class="btn btn-default"/>            
+      </div>          
+    </div>      
+  </form>
+</template>
