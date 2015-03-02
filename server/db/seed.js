@@ -46,18 +46,18 @@ if (Customers.find().count() === 0) {
       hasPackageM: false,
       hasPackageL: false,
       hasPackageXL: true,
-      hasAddText1: true,
-      hasAddText2: true,
+      hasAddTextOne: true,
+      hasAddTextTwo: true,
       hasHeaderImg: false,
       hasHeaderSlider: true,
       hasGalleryS: false,
       hasGalleryM: true,
       hasVideo: true,      
-      socialMedia: true,
+      hasSocialMedia: true,
       rentingsBegin: submitted,
       rentingsEnd: submitted,
       rentingsName: 'Ferienhaus ' + customer.fullname,
-      rentingsUrl: url,
+      rentingsUrl: 'ferienhaus_' + customer.name + '_' + customer.surname,
       street: street,
       additional: additional,
       plz: plz,
@@ -67,7 +67,31 @@ if (Customers.find().count() === 0) {
       submitted: submitted,
       updatedAt: submitted  
     });
-    
+
+    Tours.insert({
+      customerId: customerId,
+      hasPackageS: false,
+      hasPackageM: false,
+      hasPackageL: false,
+      hasPackageXL: true,
+      hasAddTextOne: true,
+      hasAddTextTwo: true,
+      hasHeaderImg: false,
+      hasHeaderSlider: true,
+      hasGalleryS: false,
+      hasGalleryM: true,
+      hasVideo: true,      
+      hasSocialMedia: true,
+      toursBegin: submitted,
+      toursEnd: submitted,
+      toursName: 'Reise ' + customer.fullname,
+      toursUrl: url,
+      toursCanonicalUrl: 'reise_' + customer.name + '_' + customer.surname,
+      toursRegion: 'Schwarzwald',
+      toursCountry: 'Deutschland',
+      submitted: submitted,
+      updatedAt: submitted  
+    });    
   }
 };
 

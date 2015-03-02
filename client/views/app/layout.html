@@ -6,8 +6,11 @@
     </div>
   {{else}}
     <div class="container page">  
-      {{> header}}       
       {{> yield}}
     </div>
   {{/if}}
+</template>
+
+<template name="dev">
+        {{> header}}       
 </template>

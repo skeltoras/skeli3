@@ -37,5 +37,5 @@ meteorhacks:npm
 
 npm-container
 andruschka:bootstrap-image-gallery
-summernote:summernote
-natestrauser:x-editable-bootstrap
+fortawesome:fontawesome
+froala:editor

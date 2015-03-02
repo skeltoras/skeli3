@@ -2,10 +2,10 @@
 RPController = RouteController.extend({
 });
 
-Router.route('/rp/1/:_id', function (){ 
+Router.route('/rp/1/:rentingsUrl', function (){ 
   this.render('rentingsSingle', {
     data: function () {
-      return Rentings.findOne({_id: this.params._id});
+      return Rentings.findOne({rentingsUrl: this.params.rentingsUrl});
     },
     action: function() {
       if (this.ready())
@@ -14,5 +14,20 @@ Router.route('/rp/1/:_id', function (){
   });
 }, {
   name: 'rentings.single',
+  controller: 'RPController'
+});
+
+Router.route('/rp/2/:toursUrl', function (){ 
+  this.render('toursSingle', {
+    data: function () {
+      return Tours.findOne({toursUrl: this.params.toursUrl});
+    },
+    action: function() {
+      if (this.ready())
+        this.render();
+    }
+  });
+}, {
+  name: 'tours.single',
   controller: 'RPController'
 });

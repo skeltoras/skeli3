@@ -15,6 +15,220 @@
   </div>
   <div class="col-sm-9">
     <h3>Eingaben:</h3> 
+    <form class="form-horizontal" role="form" id="formBasics">             
+      <fieldset> 
+        <legend>Öffentliche Daten</legend>     
+        <!-- customerName -->      
+        <div class="form-group form-group-sm">        
+          <label for="customerName" class="col-sm-3 control-label">Kunde</label>        
+          <div class="col-sm-9">          
+            <input type="text" class="form-control" id="customerName" name="customerName" value="{{customerName}}">        
+          </div>      
+        </div>    
+        <!-- street -->              
+        <div class="form-group form-group-sm">                
+          <label for="graduate" class="col-sm-3 control-label">Strasse</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="street" name="street" value="{{street}}">                
+          </div>              
+        </div>              
+        <!-- additional -->              
+        <div class="form-group form-group-sm">                
+          <label for="additional" class="col-sm-3 control-label">Zusatz</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="additional" name="additional" value="{{additional}}">                
+          </div>              
+        </div>              
+        <!-- plz -->              
+        <div class="form-group form-group-sm">                
+          <label for="plz" class="col-sm-3 control-label">PLZ</label>                
+          <div class="col-sm-4">                  
+            <input type="text" class="form-control" id="plz" name="plz" value="{{plz}}">                
+          </div>              
+        </div>              
+        <!-- city -->              
+        <div class="form-group form-group-sm">                
+          <label for="city" class="col-sm-3 control-label">Ort</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="city" name="city" value="{{city}}">                
+          </div>              
+        </div>              
+        <!-- country -->              
+        <div class="form-group form-group-sm">                
+          <label for="country" class="col-sm-3 control-label">Land</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="country" name="country" value="{{country}}">                
+          </div>              
+        </div>              
+        <!-- telephone -->              
+        <div class="form-group form-group-sm">                
+          <label for="telephone" class="col-sm-3 control-label">Telefon</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="telephone" name="telephone" value="{{telephone}}">                
+          </div>              
+        </div>              
+        <!-- telefax -->              
+        <div class="form-group form-group-sm">                
+          <label for="telefax" class="col-sm-3 control-label">Fax</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="telefax" name="telefax" value="{{telefax}}">                
+          </div>              
+        </div>              
+        <!-- emailOff -->              
+        <div class="form-group form-group-sm">                
+          <label for="emailOff" class="col-sm-3 control-label">Email</label>                
+          <div class="col-sm-9">                  
+            <input type="email" class="form-control" id="emailOff" name="emailOff" value="{{emailOff}}">                
+          </div>              
+        </div>              
+        <!-- url -->              
+        <div class="form-group form-group-sm">                
+          <label for="url" class="col-sm-3 control-label">Website</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="url" name="url" value="{{url}}">                
+          </div>              
+        </div>      
+      </fieldset>
+      <fieldset>
+        <legend>Interne Daten</legend>
+        <!-- customerContact -->              
+        <div class="form-group form-group-sm">                
+          <label for="customerContact" class="col-sm-3 control-label">Ansprechpartner</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="customerContact" name="customerContact" value="{{customerContact}}">                
+          </div>              
+        </div>
+        <!-- contactTelephone -->              
+        <div class="form-group form-group-sm">                
+          <label for="contactTelephone" class="col-sm-3 control-label">Telefon</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="contactTelephone" name="contactTelephone" value="{{contactTelephone}}">                
+          </div>              
+        </div>
+        <!-- contactMobil -->              
+        <div class="form-group form-group-sm">                
+          <label for="contactMobil" class="col-sm-3 control-label">Mobil</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="contactMobil" name="contactMobil" value="{{contactMobil}}">                
+          </div>              
+        </div>
+        <!-- contactEmail -->              
+        <div class="form-group form-group-sm">                
+          <label for="contactEmail" class="col-sm-3 control-label">E-Mail</label>                
+          <div class="col-sm-9">                  
+            <input type="email" class="form-control" id="contactEmail" name="contactEmail" value="{{contactEmail}}">                
+          </div>              
+        </div>
+        <!-- socialFacebook -->              
+        <div class="form-group form-group-sm">                
+          <label for="socialFacebook" class="col-sm-3 control-label">Facebook</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="socialFacebook" name="socialFacebook" value="{{socialFacebook}}">                
+          </div>              
+        </div>
+        <!-- socialTwitter -->              
+        <div class="form-group form-group-sm">                
+          <label for="socialTwitter" class="col-sm-3 control-label">Twitter</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="socialTwitter" name="socialTwitter" value="{{socialTwitter}}">                
+          </div>              
+        </div>
+        <!-- socialGplus -->              
+        <div class="form-group form-group-sm">                
+          <label for="socialGplus" class="col-sm-3 control-label">G+</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="socialGplus" name="socialGplus" value="{{socialGplus}}">                
+          </div>              
+        </div>
+        <!-- socialYoutube -->              
+        <div class="form-group form-group-sm">                
+          <label for="socialYoutube" class="col-sm-3 control-label">Youtube</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="socialYoutube" name="socialYoutube" value="{{socialYoutube}}">                
+          </div>              
+        </div>
+        <!-- notes -->          
+        <div class="form-group form-group-sm">                
+          <label for="notes" class="col-sm-3 control-label">Notizen</label>                
+          <div class="col-sm-9">                  
+            <textarea rows="3" data-schema-key="notes" class="form-control" id="notes" name="notes">{{text}}</textarea>                
+          </div>              
+        </div>     
+      </fieldset>
+      <fieldset>
+        <legend>Paketdaten XL</legend>
+        <!-- TabOneXL -->              
+        <div class="form-group form-group-sm">                
+          <label for="TabOneXL" class="col-sm-3 control-label">Tab #1</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="TabOneXL" name="TabOneXL" value="{{tabOneXL}}">                
+          </div>              
+        </div>
+        <!-- TextOneXL -->          
+        <div class="form-group form-group-sm">                
+          <label for="TextOneXL" class="col-sm-3 control-label">Text #1</label>                
+          <div class="col-sm-9">                  
+            <textarea rows="3" data-schema-key="TextOneXL" class="form-control wysiwyg" id="TextOneXL" name="TextOneXL">{{textOneXL}}</textarea>                
+          </div>              
+        </div>
+        <!-- TabTwoXL -->              
+        <div class="form-group form-group-sm">                
+          <label for="TabTwoXL" class="col-sm-3 control-label">Tab #2</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="TabTwoXL" name="TabTwoXL" value="{{tabTwoXL}}">                
+          </div>              
+        </div>
+        <!-- TextTwoXL -->          
+        <div class="form-group form-group-sm">                
+          <label for="TextTwoXL" class="col-sm-3 control-label">Text #2</label>                
+          <div class="col-sm-9">                  
+            <textarea rows="3" data-schema-key="TextTwoXL" class="form-control wysiwyg" id="TextTwoXL" name="TextTwoXL">{{textTwoXL}}</textarea>                
+          </div>              
+        </div>
+        <!-- TabThreeXL -->              
+        <div class="form-group form-group-sm">                
+          <label for="TabThreeXL" class="col-sm-3 control-label">Tab #3</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="TabThreeXL" name="TabThreeXL" value="{{tabThreeXL}}">                
+          </div>              
+        </div>
+        <!-- TextThreeXL -->          
+        <div class="form-group form-group-sm">                
+          <label for="TextThreeXL" class="col-sm-3 control-label">Text #3</label>                
+          <div class="col-sm-9">                  
+            <textarea rows="3" data-schema-key="TextThreeXL" class="form-control wysiwyg" id="TextThreeXL" name="TextThreeXL">{{textThreeXL}}</textarea>                
+          </div>              
+        </div>
+        <!-- TabFourXL -->              
+        <div class="form-group form-group-sm">                
+          <label for="TabFourXL" class="col-sm-3 control-label">Tab #4</label>                
+          <div class="col-sm-9">                  
+            <input type="text" class="form-control" id="TabFourXL" name="TabFourXL" value="{{tabFourXL}}">                
+          </div>              
+        </div>
+        <!-- TextFourXL -->          
+        <div class="form-group form-group-sm">                
+          <label for="TextFourXL" class="col-sm-3 control-label">Text #4</label>                
+          <div class="col-sm-9">                  
+            <textarea rows="3" data-schema-key="TextFourXL" class="form-control wysiwyg" id="TextFourXL" name="TextFourXL">{{textFourXL}}</textarea>                
+          </div>              
+        </div>
+      </fieldset>
+      <fieldset>              
+        <!-- buttons -->          
+        <div class="control-group">            
+          <div class="controls">              
+            <input type="submit" value="Kunde ändern" class="btn btn-default"/>              
+            <input type="reset" value="Abbrechen" class="btn btn-default"/>            
+          </div>          
+        </div>
+      </fieldset>      
+    </form>
+  </div>
+</div>
+</template>
+
+<template name="zwischenlager">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Grunddaten</a></li>
@@ -30,10 +244,9 @@
       </div>
       {{#each portals}}
         <div role="tabpanel" class="tab-pane active" id="{{name}}">
-          {{> tabs portalName}}
+          {{> tabs}}
         </div>
       {{/each}}
     </div>
-  </div>
-</div>
+
 </template>

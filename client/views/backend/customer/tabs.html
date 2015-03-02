@@ -1,3 +1,53 @@
 <template name="tabs">
-{{{test}}}
+    {{#with getDataRentings}}
+      <form class="form-horizontal" role="form" id="formBasics">             
+        <fieldset>      
+          <!-- hasPackageS -->      
+          <div class="form-group form-group-sm">
+            <label for="hasPackageS" class="col-sm-3 control-label">Paket S</label>
+            <div class="col-sm-9">
+              {{#if hasPackageS}}
+                <input type="checkbox" id="hasPackageS" class="changeRentings" name="hasPackageS" checked="checked">
+              {{else}}
+                <input type="checkbox" id="hasPackageS" class="changeRentings" name="hasPackageS">
+              {{/if}}
+            </div>           
+          </div>
+          <!-- hasPackageM -->      
+          <div class="form-group form-group-sm">
+            <label for="hasPackageM" class="col-sm-3 control-label">Paket M</label>
+            <div class="col-sm-9">
+              {{#if hasPackageM}}
+                <input type="checkbox" id="hasPackageM" class="changeRentings" name="hasPackageM" checked="checked">
+              {{else}}
+                <input type="checkbox" id="hasPackageM" class="changeRentings" name="hasPackageM">
+              {{/if}}
+            </div>           
+          </div>
+        </fieldset>
+        <!-- package S -->
+        <fieldset>
+          <input type="text" class="hasPackageS form-control" id="tabOneS" name="tabOneS" placeholder="Tab #1" value="{{tabOneS}}">                        
+          <textarea class="hasPackageS form-control" id="TextOneS">{{textOneS}}</textarea>    
+        </fieldset>
+        
+        <!-- package M -->
+        <fieldset>
+          <input type="text" class="hasPackageM form-control" id="tabOneM" name="tabOneM" placeholder="Tab #1" value="{{tabOneM}}">                        
+          <textarea class="hasPackageM form-control" id="TextOneM">{{TextOneM}}</textarea>    
+          <input type="text" class="hasPackageM form-control" id="tabTwoM" name="tabTwoM" placeholder="Tab #2" value="{{tabTwoM}}">                        
+          <textarea class="hasPackageM form-control" id="TextTwoM">{{TextTwoM}}</textarea>    
+        </fieldset>
+        
+        <fieldset>    
+          <!-- buttons -->          
+          <div class="control-group">            
+            <div class="controls">              
+              <input type="submit" value="Döp" class="btn btn-default"/>              
+              <input type="reset" value="Abbrechen" class="btn btn-default"/>            
+            </div>          
+          </div>
+        </fieldset>      
+      </form>
+    {{/with}}
 </template>

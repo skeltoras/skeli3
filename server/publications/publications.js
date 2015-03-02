@@ -10,3 +10,7 @@ Meteor.publish('rentings', function() {
 Meteor.publish('portals', function() {
   return Portals.find();
 });
+
+Meteor.publish('tours', function() {
+  return Tours.find();
+});

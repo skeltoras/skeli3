@@ -2,3 +2,4 @@
 Meteor.subscribe('customers');
 Meteor.subscribe('rentings');
 Meteor.subscribe('portals');
+Meteor.subscribe('tours');

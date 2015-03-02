@@ -1,4 +1,4 @@
-<template name="rentingsSingle">
+<template name="toursSingle">
 <div class="row hidden-xs">
   <div class="col-sm-12">
     {{#if hasHeaderSlider}}<img class="headerimg" src="/img/oberstdorf2.jpg">{{else}}Bild{{/if}}
@@ -8,9 +8,9 @@
 <div class="row hidden-sm hidden-md hidden-lg">
   <div class="col-xs-12 text-center">
     <img class="headerimg" src="/img/oberstdorf2.jpg">
-    <h3>{{rentingsName}}</h3>
+    <h3>{{toursName}}</h3>
     <p>
-      <a href="">{{rentingsRegion}}</a><br>
+      <a href="">{{toursRegion}}</a><br>
     </p>
   </div>
 </div>
@@ -56,7 +56,7 @@
         <div class="panel-heading" role="tab" id="headingOne">
           <h4 class="panel-title">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              Adresse & Kontakt
+              Reisedaten & Kontakt
             </a>
           </h4>
         </div> 
@@ -211,11 +211,11 @@
 
 <div class="row hidden-xs">
   <div class="col-sm-4 hidden-md hidden-lg hidden-xs">
-    <h3>{{rentingsName}}</h3>
+    <h3>{{toursName}}</h3>
     <p>
-      Bereich: <a href="">Vermietung</a><br>
-      Land: <a href="">{{rentingsCountry}}</a><br>
-      Region: <a href="">{{rentingsRegion}}</a>
+      Bereich: <a href="">Reisen</a><br>
+      Land: <a href="">{{toursCountry}}</a><br>
+      Region: <a href="">{{toursRegion}}</a>
     </p>
   </div>
   <div class="col-sm-4 hidden-md hidden-lg text-center">
@@ -239,22 +239,20 @@
   </div>
 </div>
 <div class="spacer-20 hidden-md hidden-lg"></div>
+<!-- large -->
 <div class="row">
   <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-    <h3>{{rentingsName}}</h3>
+    <h3>{{toursName}}</h3>
     <p>
-      Bereich: <a href="">Vermietung</a><br>
-      Land: <a href="">{{rentingsCountry}}</a><br>
-      Region: <a href="">{{rentingsRegion}}</a>
+      Bereich: <a href="">Reisen</a><br>
+      Land: <a href="">{{toursCountry}}</a><br>
+      Region: <a href="">{{toursRegion}}</a>
     </p>
-    <h3>Objektadresse</h3>
+    <h3>Termin</h3>
     <p>
-      {{rentingsStreet}}<br>
-      {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
-      {{plz}} {{city}}<br>
-      {{rentingsCountry}}
+      {{formatDate toursBegin}} bis {{formatDate toursEnd}}
     </p>
-    <h3>Kontakt Vermieter</h3>
+    <h3>Kontakt Veranstalter</h3>
     <p>
       {{#with getCustomer}}
         {{customerName}}<br>
@@ -266,10 +264,10 @@
         {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
       {{/with}}
     </p>
-    {{#if rentingsUrl}}
+    {{#if toursUrl}}
       <h3>Website</h3>
       <p>
-        <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>
+        <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{toursUrl}}</a>
       </p>
     {{/if}}
     {{#if socialMedia}}
@@ -369,55 +367,4 @@
     {{/if}}
   </div>
 </div>
-</template>
-
-
-
-<template name="gallery">
-  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-    <div class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body next"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left prev">
-                        <i class="glyphicon glyphicon-chevron-left"></i>
-                        Previous
-                    </button>
-                    <button type="button" class="btn btn-primary next">
-                        Next
-                        <i class="glyphicon glyphicon-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- >
-<div id="links">
-    <a href="/img/lenggries-ski.jpg" title="Banana" data-gallery>
-        <img src="/img/lenggries-ski.jpg" alt="Banana">
-    </a>
-    <a href="/img/oberstdorf1.jpg" title="Apple" data-gallery>
-        <img src="/img/oberstdorf1.jpg" alt="Apple">
-    </a>
-    <a href="/img/oberstdorf2.jpg" title="Orange" data-gallery>
-        <img src="/img/oberstdorf2.jpg" alt="Orange">
-    </a>
-</div> -->
 </template>
