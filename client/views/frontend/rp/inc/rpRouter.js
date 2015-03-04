@@ -1,27 +1,57 @@
 //@since v0.1.1
 RPController = RouteController.extend({
+  layoutTemplate: 'rpLayout',
+  loadingTemplate: 'loading',
+  notFoundTemplate: 'notFound'
 });
 
 Router.route('/rp', function (){ 
-  this.render('rpHome', {
-    //waitOn: function() {
-    //  return Meteor.subscribe('rphomerentings');
-    //  return Meteor.subscribe('rphometours');
-    //},
-    data: function () {
-      //return Meteor.subscribe('rphomerentings');
-    },
-    action: function() {
-      if (this.ready()) {
-        this.render();
-      } else {
-        this.render('loading');
-      }
-    }
-  });
+  this.render('rpHome');
 }, {
-  name: 'rp.home'
-  //controller: 'RPController'
+  name: 'rp.home',
+  controller: 'RPController'
+});
+
+Router.route('/rp/rn', function (){ 
+  this.render('rnHome');
+}, {
+  name: 'rn.home',
+  controller: 'RPController'
+});
+
+Router.route('/rp/ts', function (){ 
+  this.render('tsHome');
+}, {
+  name: 'ts.home',
+  controller: 'RPController'
+});
+
+Router.route('/rp/impressum', function (){ 
+  this.render('rpImprint');
+}, {
+  name: 'rp.imprint',
+  controller: 'RPController'
+});
+
+Router.route('/rp/agb', function (){ 
+  this.render('rpAgb');
+}, {
+  name: 'rp.agb',
+  controller: 'RPController'
+});
+
+Router.route('/rp/kontakt', function (){ 
+  this.render('rpContact');
+}, {
+  name: 'rp.contact',
+  controller: 'RPController'
+});
+
+Router.route('/rp/mediadaten', function (){ 
+  this.render('rpMediadata');
+}, {
+  name: 'rp.mediadata',
+  controller: 'RPController'
 });
 
 
@@ -62,5 +92,3 @@ Router.route('/rp/2/:toursSiteUrl', function (){
   name: 'tours.single',
   controller: 'RPController'
 });
-
-Router.onBeforeAction('loading');

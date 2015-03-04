@@ -18,9 +18,11 @@ if (Customers.find().count() === 0) {
     submitted = new Date().getTime();
     updatedAt = new Date().getTime();
     
+    var customersSiteUrl = customer.name.toLowerCase() + '_' + customer.surname.toLowerCase();
     
     customerId = Customers.insert({
       customerName: customer.fullname,
+      customersSiteUrl: customersSiteUrl,
       street: street,
       additional: additional,
       plz: plz,
