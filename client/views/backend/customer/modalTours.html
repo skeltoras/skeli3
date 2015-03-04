@@ -1,0 +1,69 @@
+<template name="modalTours">
+  <!-- Modal -->
+  <div class="modal fade" id="modalTours" tabindex="-1" role="dialog" aria-labelledby="modalToursLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalToursLabel">Reise-Paket {{#if getPackage}}{{getPackage}}{{/if}}</h4>
+        </div>
+        <div class="modal-body">
+          {{#if packageS}}
+            {{> formPackageS}}
+          {{/if}}
+          {{#if packageM}}
+            {{> formPackageM}}
+          {{/if}}
+          {{#if packageL}}
+            {{> formPackageL}}
+          {{/if}}
+          {{#if packageXL}}
+            {{> formPackageXL}}
+          {{/if}}
+          {{#if getTextOne}}
+            <!-- addTextTabOne -->                
+            <div class="form-group form-group-sm">                   
+              <label for="addTextTabOne" class="col-sm-3 control-label">Tab #5</label>                   
+              <div class="col-sm-9">                       
+                <input type="text" class="form-control" id="addTextTabOne" name="addTextTabOne">                   
+              </div>               
+            </div>
+            <!-- addTextOne -->
+            <div class="form-group form-group-sm">                   
+              <label for="addTextOne" class="col-sm-3 control-label">Text #5</label>                   
+              <div class="col-sm-9">                       
+                <textarea class="wysiwyg" id="addTextOne" name="addTextOne"></textarea>                   
+              </div>               
+            </div>
+          {{/if}}
+          {{#if getTextTwo}}
+            <!-- addTextTabTwo -->                
+            <div class="form-group form-group-sm">                   
+              <label for="addTextTabTwo" class="col-sm-3 control-label">Tab #6</label>                   
+              <div class="col-sm-9">                       
+                <input type="text" class="form-control" id="addTextTabTwo" name="addTextTabTwo">                   
+              </div>               
+            </div>
+            <!-- addTextTwo -->
+            <div class="form-group form-group-sm">                   
+              <label for="addTextTwo" class="col-sm-3 control-label">Text #6</label>                   
+              <div class="col-sm-9">                       
+                <textarea class="wysiwyg" id="addTextTwo" name="addTextTwo"></textarea>                   
+              </div>               
+            </div>
+          {{/if}}
+          {{#if getVideo}}
+            <!-- videoUrl -->                
+            <div class="form-group form-group-sm">                   
+              <label for="videoUrl" class="col-sm-3 control-label">Video URL</label>                   
+              <div class="col-sm-9">                       
+                <input type="text" class="form-control" id="videoUrl" name="videoUrl">                   
+              </div>               
+            </div>
+          {{/if}}
+          Es fehlen: Galerie, Header-Bild / Slider
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -14,3 +14,7 @@ Meteor.publish('portals', function() {
 Meteor.publish('tours', function() {
   return Tours.find();
 });
+
+Meteor.publish('regions', function() {
+  return Regions.find();
+});

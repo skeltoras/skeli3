@@ -8,7 +8,6 @@ meteor-platform
 underscore
 coffeescript
 sacha:spin
-iron:router
 less
 nemo64:bootstrap
 accounts-password
@@ -39,3 +38,4 @@ npm-container
 andruschka:bootstrap-image-gallery
 fortawesome:fontawesome
 froala:editor
+iron:router

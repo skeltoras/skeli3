@@ -1,24 +1,24 @@
 //since v0.1.1
 
 //-- template created functions
-Template.customerEditACP.created = function(){
+Template.customerEdit.created = function(){
 };
 
 //-- template destroyed functions
-Template.customerEditACP.destroyed = function(){
+Template.customerEdit.destroyed = function(){
 };
 
 //-- template rendered functions
-Template.customerEditACP.rendered = function(){
+Template.customerEdit.rendered = function(){
   $('.wysiwyg').editable({inlineMode: false});
 };
 
 //-- template helpers                            
-Template.customerEditACP.helpers({
+Template.customerEdit.helpers({
 });
 
 //-- template events
-Template.customerEditACP.events({ 
+Template.customerEdit.events({ 
   'submit form': function(e){
     e.preventDefault();
     var customerId = this._id;

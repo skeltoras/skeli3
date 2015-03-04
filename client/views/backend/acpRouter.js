@@ -10,13 +10,13 @@ Router.route('/acp/customers', function (){
 });
 
 Router.route('/acp/customer/new', function () {
-  this.render('customerNewACP', {
+  this.render('customerNew', {
     data: function() {                                                                             
       //Session.set('sidebar', false);                                                               
     }
   });
 }, {
-  name: 'customer.new.acp',
+  name: 'customer.new',
   controller: 'AcpController'
 });
 
@@ -39,7 +39,7 @@ Router.route('/acp/customer/show/:_id', function (){
 });
 
 Router.route('/acp/customer/edit/:_id', function (){ 
-  this.render('customerEditACP', {
+  this.render('customerEdit', {
     data: function () {
       Session.set('customerId', this.params._id);
       return Customers.findOne({_id: this.params._id});
@@ -50,6 +50,6 @@ Router.route('/acp/customer/edit/:_id', function (){
     }
   });
 }, {
-  name: 'customer.edit.acp',
+  name: 'customer.edit',
   controller: 'AcpController'
 });

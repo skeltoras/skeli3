@@ -1,423 +1,498 @@
 <template name="rentingsSingle">
-<div class="row hidden-xs">
-  <div class="col-sm-12">
-    {{#if hasHeaderSlider}}<img class="headerimg" src="/img/oberstdorf2.jpg">{{else}}Bild{{/if}}
-  </div>
-</div>
-<div class="spacer-20 hidden-xs"></div>
-<div class="row hidden-sm hidden-md hidden-lg">
-  <div class="col-xs-12 text-center">
-    <img class="headerimg" src="/img/oberstdorf2.jpg">
-    <h3>{{rentingsName}}</h3>
-    <p>
-      <a href="">{{rentingsRegion}}</a><br>
-    </p>
-  </div>
-</div>
-<div class="row hidden-sm hidden-md hidden-lg">
-  <div class="col-xs-12 text-center">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-      
-      {{#if hasGalleryM}}
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingFour">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Bilder
-            </a>
-          </h4>
-        </div> 
-        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-          <div class="panel-body">
-            <p>
-              kommt noch... 
-            </p>
-          </div>
-        </div> 
-      </div>
-      {{/if}}
-
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingTwo">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Übersicht
-            </a>
-          </h4>
-        </div> 
-        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body text-left">
-            {{{textOneXL}}}
-          </div>
-        </div> 
-      </div>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              Adresse & Kontakt
-            </a>
-          </h4>
-        </div> 
-        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            <p>
-              {{rentingsStreet}}<br>
-              {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
-              {{plz}} {{city}}
-              {{#if rentingsUrl}}<br><br><i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>{{/if}}
-            </p>
-            <p>
-              {{#with getCustomer}}
-                {{customerName}}<br>
-                {{#if telephone}}<i class="fa fa-phone"></i> <a href="tel:{{telephone}}">{{telephone}}</a><br>{{/if}}
-                {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
-              {{/with}}
-            </p>
-          </div>
-        </div> 
-      </div>
-      
-      {{#if socialMedia}}
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingThree">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Social Media
-            </a>
-          </h4>
-        </div> 
-        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            <p>
-              <span class="socialIcons">
-                {{#with getCustomer}}
-                  {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
-                  {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
-                  {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
-                  {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
-                {{/with}}
-              </span> 
-            </p>
-            <p>
-              Video kommt noch... 
-            </p>
-          </div>
-        </div> 
-      </div>
-      {{/if}}
-      
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingFive">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              Weitere Infos
-            </a>
-          </h4>
-        </div> 
-        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-          <div class="panel-body">
-            <!-- subgroup -->
-            <div class="panel-group" id="accordionSub" role="tablist" aria-multiselectable="true">
-              {{#if hasPackageXL}}
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading{{tabTwoXL}}">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionSub" href="#{{tabTwoXL}}" aria-expanded="false" aria-controls="{{tabTwoXL}}">
-                      {{tabTwoXL}}
-                    </a>
-                  </h4>
-                </div> 
-                <div id="{{tabTwoXL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{tabTwoXL}}">
-                  <div class="panel-body text-left">
-                    {{{textTwoXL}}}  
-                  </div>
-                </div> 
-              </div>
-              
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading{{tabThreeXL}}">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionSub" href="#{{tabThreeXL}}" aria-expanded="false" aria-controls="{{tabThreeXL}}">
-                      {{tabThreeXL}}
-                    </a>
-                  </h4>
-                </div> 
-                <div id="{{tabThreeXL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{tabThreeXL}}">
-                  <div class="panel-body text-left">
-                    {{{textThreeXL}}}  
-                  </div>
-                </div> 
-              </div>
-              
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading{{tabFourXL}}">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionSub" href="#{{tabFourXL}}" aria-expanded="false" aria-controls="{{tabFourXL}}">
-                      {{tabFourXL}}
-                    </a>
-                  </h4>
-                </div> 
-                <div id="{{tabFourXL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{tabFourXL}}">
-                  <div class="panel-body text-left">
-                    {{{textFourXL}}}  
-                  </div>
-                </div> 
-              </div>
-              {{/if}}
-              {{#if hasAddTextOne}}
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading{{addTextTabOne}}">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionSub" href="#{{addTextTabOne}}" aria-expanded="false" aria-controls="{{addTextTabOne}}">
-                      {{addTextTabOne}}
-                    </a>
-                  </h4>
-                </div> 
-                <div id="{{addTextTabOne}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{addTextTabOne}}">
-                  <div class="panel-body text-left">
-                    {{{addTextOne}}}  
-                  </div>
-                </div> 
-              </div>
-              {{/if}}
-              {{#if hasAddTextTwo}}
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading{{addTextTabTwo}}">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionSub" href="#{{addTextTabTwo}}" aria-expanded="false" aria-controls="{{addTextTabTwo}}">
-                      {{addTextTabTwo}}
-                    </a>
-                  </h4>
-                </div> 
-                <div id="{{addTextTabTwo}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{addTextTabTwo}}">
-                  <div class="panel-body text-left">
-                    {{{addTextTwo}}}  
-                  </div>
-                </div> 
-              </div>
-              {{/if}}
-            </div>
-            <!-- subgroup END-->           
-          </div>
-        </div> 
-      </div>
-
+<div class="container">
+<!-- Template for XS -->
+  <div class="row hidden-sm hidden-md hidden-lg">
+    <div class="col-xs-12 text-center">
+      {{#if rentingsDefaultImage}}<img class="headerimg" src="{{rentingsDefaultImage}}">{{/if}}
+      <h3>{{rentingsName}}</h3>
+      <p>{{#each rentingsRegions}}{{name}}{{/each}}<br></p>
     </div>
   </div>
-</div>
-
-
-<div class="row hidden-xs">
-  <div class="col-sm-4 hidden-md hidden-lg hidden-xs">
-    <h3>{{rentingsName}}</h3>
-    <p>
-      Bereich: <a href="">Vermietung</a><br>
-      Land: <a href="">{{rentingsCountry}}</a><br>
-      Region: <a href="">{{rentingsRegion}}</a>
-    </p>
-  </div>
-  <div class="col-sm-4 hidden-md hidden-lg text-center">
-    <h3>Objektadresse</h3>
-    <p>
-      {{rentingsStreet}}<br>
-      {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
-      {{plz}} {{city}}<br>
-    </p>
-    
-  </div>
-  <div class="col-sm-4 hidden-md hidden-lg text-right">
-    <h3>Kontakt Vermieter</h3>
-    <p>
-      {{#with getCustomer}}
-        {{customerName}}<br>
-        {{#if telephone}}<i class="fa fa-phone"></i> {{telephone}}<br>{{/if}}
-        {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
-      {{/with}}
-    </p>
-  </div>
-</div>
-<div class="spacer-20 hidden-md hidden-lg"></div>
-<div class="row">
-  <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-    <h3>{{rentingsName}}</h3>
-    <p>
-      Bereich: <a href="">Vermietung</a><br>
-      Land: <a href="">{{rentingsCountry}}</a><br>
-      Region: <a href="">{{rentingsRegion}}</a>
-    </p>
-    <h3>Objektadresse</h3>
-    <p>
-      {{rentingsStreet}}<br>
-      {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
-      {{plz}} {{city}}<br>
-      {{rentingsCountry}}
-    </p>
-    <h3>Kontakt Vermieter</h3>
-    <p>
-      {{#with getCustomer}}
-        {{customerName}}<br>
-        {{street}}<br>
-        {{#if additional}}{{additional}}<br>{{/if}}
-        {{plz}} {{city}}<br>
-        {{country}}<br>
-        {{#if telephone}}<i class="fa fa-phone"></i> {{telephone}}<br>{{/if}}
-        {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
-      {{/with}}
-    </p>
-    {{#if rentingsUrl}}
-      <h3>Website</h3>
-      <p>
-        <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>
-      </p>
-    {{/if}}
-    {{#if socialMedia}}
-      <h3>Social Media</h3>
-      <p>
-        <span class="socialIcons">
-          {{#with getCustomer}}
-            {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
-            {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
-            {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
-            {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
-          {{/with}}
-        </span> 
-      </p>
-    {{/if}}
-    {{#if hasGalleryM}}
-      <h3>Galerie</h3>
-      kommt noch...
-    {{/if}}
-    {{#if hasVideo}}
-      <h3>Video</h3>
-      <p>
-        kommt noch...
-      </p>
-    {{/if}}
-  </div>  
-  <div class="col-sm-12 col-md-9 col-lg-9 hidden-xs">
-    {{#if hasPackageXL}}
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#{{tabOneXL}}" aria-controls="home" role="tab" data-toggle="tab">{{tabOneXL}}</a></li>
-        <li role="presentation"><a href="#{{tabTwoXL}}" aria-controls="profile" role="tab" data-toggle="tab">{{tabTwoXL}}</a></li>
-        <li role="presentation"><a href="#{{tabThreeXL}}" aria-controls="messages" role="tab" data-toggle="tab">{{tabThreeXL}}</a></li>
-        <li role="presentation"><a href="#{{tabFourXL}}" aria-controls="settings" role="tab" data-toggle="tab">{{tabFourXL}}</a></li>
-        {{#if hasAddTextOne}}
-          <li role="presentation"><a href="#{{addTextTabOne}}" aria-controls="settings" role="tab" data-toggle="tab">{{addTextTabOne}}</a></li>
+  <div class="row hidden-sm hidden-md hidden-lg">
+    <div class="col-xs-12 text-center">
+      <div class="panel-group" id="xsTabs" role="tablist" aria-multiselectable="true">    
+        <!-- rentingsHasGalleryS -->
+        {{#if rentingsHasGalleryS}}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="rentingsHeadOne">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#xsTabs" href="#rentingsCollapseOne" aria-expanded="false" aria-controls="rentingsCollapseOne">
+                  Bilder
+                </a>
+              </h4>
+            </div> 
+            <div id="rentingsCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHeadOne">
+              <div class="panel-body">
+                <p>
+                  Galerie (klein) kommt noch... 
+                </p>
+              </div>
+            </div> 
+          </div>
         {{/if}}
-        {{#if hasAddTextTwo}}
-          <li role="presentation"><a href="#{{addTextTabTwo}}" aria-controls="settings" role="tab" data-toggle="tab">{{addTextTabTwo}}</a></li>
+        <!-- rentingsHasGalleryM -->
+        {{#if rentingsHasGalleryM}}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="rentingsHeadTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#xsTabs" href="#rentingsCollapseTwo" aria-expanded="false" aria-controls="rentingsCollapseTwo">
+                  Bilder
+                </a>
+              </h4>
+            </div> 
+            <div id="rentingsCollapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHeadTwo">
+              <div class="panel-body">
+                <p>
+                  Galerie (groß) kommt noch... 
+                </p>
+              </div>
+            </div> 
+          </div>
+        {{/if}}
+        <!-- rentingsTextOne -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="rentingsHeadThree">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#xsTabs" href="#rentingsCollapseThree" aria-expanded="false" aria-controls="rentingsCollapseThree">
+                {{#if rentingsTabOneS}}{{rentingsTabOneS}}{{/if}}
+                {{#if rentingsTabOneM}}{{rentingsTabOneM}}{{/if}}
+                {{#if rentingsTabOneL}}{{rentingsTabOneL}}{{/if}}
+                {{#if rentingsTabOneXL}}{{rentingsTabOneXL}}{{/if}}
+              </a>
+            </h4>
+          </div> 
+          <div id="rentingsCollapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHeadThree">
+            <div class="panel-body text-left">
+              {{#if rentingsTextOneS}}{{{rentingsTextOneS}}}{{/if}}
+              {{#if rentingsTextOneM}}{{{rentingsTextOneM}}}{{/if}}
+              {{#if rentingsTextOneL}}{{{rentingsTextOneL}}}{{/if}}
+              {{#if rentingsTextOneXL}}{{{rentingsTextOneXL}}}{{/if}}
+            </div>
+          </div> 
+        </div>
+        <!-- rentingsObjectData -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="rentingsHeadFour">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#xsTabs" href="#rentingsCollapseFour" aria-expanded="false" aria-controls="rentingsCollapseFour">
+                Adresse & Kontakt
+              </a>
+            </h4>
+          </div> 
+          <div id="rentingsCollapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHeadFour">
+            <div class="panel-body">
+              <p>
+                {{rentingsStreet}}<br>
+                {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
+                {{rentingsPlz}} {{rentingsCity}}
+                {{#if rentingsUrl}}<br><br><i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>{{/if}}
+              </p>
+              <p>
+                {{#with getCustomer}}
+                  {{customerName}}<br>
+                  {{#if telephone}}<i class="fa fa-phone"></i> <a href="tel:{{telephone}}">{{telephone}}</a><br>{{/if}}
+                  {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
+                {{/with}}
+              </p>
+            </div>
+          </div> 
+        </div>
+        <!-- rentingsHasSocialMedia -->
+        {{#if rentingsHasSocialMedia}}
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="rentingsHeadFive">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#xsTabs" href="#rentingsCollapseFive" aria-expanded="false" aria-controls="rentingsCollapseFive">
+                Social Media
+              </a>
+            </h4>
+          </div> 
+          <div id="rentingsCollapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHeadFive">
+            <div class="panel-body">
+              <p>
+                <span class="socialIcons">
+                  {{#with getCustomer}}
+                    {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
+                    {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
+                    {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
+                    {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
+                  {{/with}}
+                </span> 
+              </p>
+              {{#if rentingsHasVideo}}
+                <p>
+                  Video kommt noch... 
+                </p>
+              {{/if}}
+            </div>
+          </div> 
+        </div>
+        {{/if}}
+        <!-- rentingsOtherTexts -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="rentingsHeadSix">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#xsTabs" href="#rentingsCollapseSix" aria-expanded="false" aria-controls="rentingsCollapseSix">
+                Weitere Infos
+              </a>
+            </h4>
+          </div> 
+          <div id="rentingsCollapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHeadSix">
+            <div class="panel-body">
+              <div class="panel-group" id="xsTabsSub" role="tablist" aria-multiselectable="true">
+                <!-- packageM -->
+                {{#if rentingsHasPackageM}}
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsTabTwoM}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsTabTwoM}}" aria-expanded="false" aria-controls="{{rentingsTabTwoM}}">
+                          {{rentingsTabTwoM}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsTabTwoM}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsTabTwoM}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsTextTwoM}}}  
+                      </div>
+                    </div> 
+                  </div>
+                {{/if}}
+                <!-- packageL -->
+                {{#if rentingsHasPackageL}}
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsTabTwoL}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsTabTwoL}}" aria-expanded="false" aria-controls="{{rentingsTabTwoL}}">
+                          {{rentingsTabTwoL}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsTabTwoL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsTabTwoL}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsTextTwoL}}}  
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsTabThreeL}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsTabThreeL}}" aria-expanded="false" aria-controls="{{rentingsTabThreeL}}">
+                          {{rentingsTabThreeL}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsTabThreeL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsTabThreeL}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsTextThreeL}}}  
+                      </div>
+                    </div> 
+                  </div>
+                {{/if}}
+                <!-- packageXL -->
+                {{#if rentingsHasPackageXL}}
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsTabTwoXL}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsTabTwoXL}}" aria-expanded="false" aria-controls="{{rentingsTabTwoXL}}">
+                          {{rentingsTabTwoXL}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsTabTwoXL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsTabTwoXL}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsTextTwoXL}}}  
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsTabThreeXL}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsTabThreeXL}}" aria-expanded="false" aria-controls="{{rentingsTabThreeXL}}">
+                          {{rentingsTabThreeXL}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsTabThreeXL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsTabThreeXL}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsTextThreeXL}}}  
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsTabFourXL}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsTabFourXL}}" aria-expanded="false" aria-controls="{{rentingsTabFourXL}}">
+                          {{rentingsTabFourXL}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsTabFourXL}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsTabFourXL}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsTextFourXL}}}  
+                      </div>
+                    </div> 
+                  </div>
+                {{/if}}
+                <!-- rentingsHasAddTextOne -->
+                {{#if rentingsHasAddTextOne}}
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsAddTextTabOne}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsAddTextTabOne}}" aria-expanded="false" aria-controls="{{rentingsAddTextTabOne}}">
+                          {{rentingsAddTextTabOne}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsAddTextTabOne}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsAddTextTabOne}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsAddTextOne}}}  
+                      </div>
+                    </div> 
+                  </div>
+                {{/if}}
+                <!-- rentingsHasAddTextTwo -->
+                {{#if rentingsHasAddTextTwo}}
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="rentingsHead_{{rentingsAddTextTabTwo}}">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#xsTabsSub" href="#{{rentingsAddTextTabTwo}}" aria-expanded="false" aria-controls="{{rentingsAddTextTabTwo}}">
+                          {{rentingsAddTextTabTwo}}
+                        </a>
+                      </h4>
+                    </div> 
+                    <div id="{{rentingsAddTextTabTwo}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rentingsHead_{{rentingsAddTextTabTwo}}">
+                      <div class="panel-body text-left">
+                        {{{rentingsAddTextTwo}}}  
+                      </div>
+                    </div> 
+                  </div>
+                {{/if}}
+              </div>           
+            </div>
+          </div> 
+        </div>  
+      </div>
+    </div>
+  </div>
+<!-- END Template for XS -->
+
+<!-- Template for SM MD LG -->   
+  <!-- Header Img / header Slider -->
+  {{#if rentingsHasHeaderSlider}}
+    <div class="row hidden-xs">
+      <div class="col-sm-12">
+        <!-- placeholder -->
+      </div>
+    </div>
+  {{else}}
+    {{#if rentingsHasHeaderImg}}
+      <div class="row hidden-xs">
+        <div class="col-sm-12">
+          <img class="headerimg" src="{{rentingsHeaderImg}}" alt="headerImg" />
+        </div>
+      </div>
+    {{else}}
+      <div class="row hidden-xs">
+        <div class="col-sm-12">
+          <img class="headerimg" src="http://placehold.it/1200x300" alt="headerImg" />
+        </div>
+      </div>
+    {{/if}}
+  {{/if}}
+  <div class="spacer-20 hidden-xs"></div>  
+<!-- sidebar SM -->
+  <div class="row hidden-xs hidden-md hidden-lg">
+    <div class="col-sm-4">
+      <h3>{{rentingsName}}</h3>
+      <p>
+        Bereich: <a href="/rp">Vermietung</a><br>
+        Land: {{#each rentingsCountries}}<a href="/rp">{{name}}</a> {{/each}}<br>
+        Region: {{#each rentingsRegions}}{{name}} {{/each}}
+      </p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <h3>Objektadresse</h3>
+      <p>
+        {{rentingsStreet}}<br>
+        {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
+        {{rentingsPlz}} {{rentingsCity}}<br>
+      </p>      
+    </div>
+    <div class="col-sm-4 text-right">
+      <h3>Kontakt Vermieter</h3>
+      <p>
+        {{#with getCustomer}}
+          {{customerName}}<br>
+          {{#if telephone}}<i class="fa fa-phone"></i> {{telephone}}<br>{{/if}}
+          {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
+        {{/with}}
+      </p>
+    </div>
+  </div>
+  <div class="spacer-20 hidden-md hidden-lg hidden-xs"></div>
+<!-- END sidebar SM -->  
+  <div class="row">
+    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+      <h3>{{rentingsName}}</h3>
+      <p>
+        Bereich: <a href="/rp">Vermietung</a><br>
+        Land: {{#each rentingsCountries}}<a href="/rp">{{name}}</a> {{/each}}<br>
+        Region: {{#each rentingsRegions}}{{name}} {{/each}}
+      </p>
+      <h3>Objektadresse</h3>
+      <p>
+        {{rentingsStreet}}<br>
+        {{#if rentingsAdditional}}{{rentingsAdditional}}<br>{{/if}}
+        {{rentingsPlz}} {{rentingsCity}}<br>
+      </p>
+      <h3>Kontakt Vermieter</h3>
+      <p>
+        {{#with getCustomer}}
+          {{customerName}}<br>
+          {{street}}<br>
+          {{#if additional}}{{additional}}<br>{{/if}}
+          {{plz}} {{city}}<br>
+          {{country}}<br>
+          {{#if telephone}}<i class="fa fa-phone"></i> {{telephone}}<br>{{/if}}
+          {{#if emailOff}}<i class="fa fa-envelope"></i> <a href="mailto:{{emailOff}}">{{emailOff}}</a>{{/if}}
+        {{/with}}
+      </p>
+      {{#if rentingsUrl}}
+        <h3>Website</h3>
+        <p>
+          <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>
+        </p>
+      {{/if}}
+      {{#if rentingsHasSocialMedia}}
+        <h3>Social Media</h3>
+        <p>
+          <span class="socialIcons">
+            {{#with getCustomer}}
+              {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
+              {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
+              {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
+              {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
+            {{/with}}
+          </span> 
+        </p>
+      {{/if}}
+      {{#if rentingsHasGalleryS}}
+        <h3>Galerie</h3>
+        Galerie (klein) kommt noch...
+      {{/if}}
+      {{#if rentingsHasGalleryM}}
+        <h3>Galerie</h3>
+        Galerie (groß) kommt noch...
+      {{/if}}
+      {{#if rentingsHasVideo}}
+        <h3>Video</h3>
+        <p>
+          kommt noch...
+        </p>
+      {{/if}}
+    </div>  
+    <div class="col-sm-12 col-md-9 col-lg-9 hidden-xs">
+      <!-- rentingsPackages -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          {{#if rentingsHasPackageS}}<a href="#{{rentingsTabOneS}}" aria-controls="{{rentingsTabOneS}}" role="tab" data-toggle="tab">{{rentingsTabOneS}}</a>{{/if}}
+          {{#if rentingsHasPackageM}}<a href="#{{rentingsTabOneM}}" aria-controls="{{rentingsTabOneM}}" role="tab" data-toggle="tab">{{rentingsTabOneM}}</a>{{/if}}
+          {{#if rentingsHasPackageL}}<a href="#{{rentingsTabOneL}}" aria-controls="{{rentingsTabOneL}}" role="tab" data-toggle="tab">{{rentingsTabOneL}}</a>{{/if}}
+          {{#if rentingsHasPackageXL}}<a href="#{{rentingsTabOneXL}}" aria-controls="{{rentingsTabOneXL}}" role="tab" data-toggle="tab">{{rentingsTabOneXL}}</a>{{/if}}
+        </li>
+        {{#if rentingsHasPackageM}}
+          <li role="presentation"><a href="#{{rentingsTabTwoM}}" aria-controls="{{rentingsTabTwoM}}" role="tab" data-toggle="tab">{{rentingsTabTwoM}}</a></li>
+        {{/if}} 
+        {{#if rentingsHasPackageL}}
+          <li role="presentation"><a href="#{{rentingsTabTwoL}}" aria-controls="{{rentingsTabTwoL}}" role="tab" data-toggle="tab">{{rentingsTabTwoL}}</a></li>
+          <li role="presentation"><a href="#{{rentingsTabThreeL}}" aria-controls="{{rentingsTabThreeL}}" role="tab" data-toggle="tab">{{rentingsTabThreeL}}</a></li>
+        {{/if}}
+        {{#if rentingsHasPackageXL}}
+          <li role="presentation"><a href="#{{rentingsTabTwoXL}}" aria-controls="{{rentingsTabTwoXL}}" role="tab" data-toggle="tab">{{rentingsTabTwoXL}}</a></li>
+          <li role="presentation"><a href="#{{rentingsTabThreeXL}}" aria-controls="{{rentingsTabThreeXL}}" role="tab" data-toggle="tab">{{rentingsTabThreeXL}}</a></li>
+          <li role="presentation"><a href="#{{rentingsTabFourXL}}" aria-controls="{{rentingsTabFourXL}}" role="tab" data-toggle="tab">{{rentingsTabFourXL}}</a></li>
+        {{/if}}
+        {{#if rentingsHasAddTextOne}}
+          <li role="presentation"><a href="#{{rentingsAddTextTabOne}}" aria-controls="{{rentingsAddTextTabOne}}" role="tab" data-toggle="tab">{{rentingsAddTextTabOne}}</a></li>
+        {{/if}}
+        {{#if rentingsHasAddTextTwo}}
+          <li role="presentation"><a href="#{{rentingsAddTextTabTwo}}" aria-controls="{{rentingsAddTextTabTwo}}" role="tab" data-toggle="tab">{{rentingsAddTextTabTwo}}</a></li>
         {{/if}}
       </ul>
-  
-      <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="{{tabOneXL}}">{{{textOneXL}}}</div>
-        <div role="tabpanel" class="tab-pane" id="{{tabTwoXL}}">{{{textTwoXL}}}</div>
-        <div role="tabpanel" class="tab-pane" id="{{tabThreeXL}}">{{{textThreeXL}}}</div>
-        <div role="tabpanel" class="tab-pane" id="{{tabFourXL}}">{{{textFourXL}}}</div>
-        {{#if hasAddTextOne}}
-          <li role="presentation"><a href="#{{addTextTabOne}}" aria-controls="settings" role="tab" data-toggle="tab">{{addTextOne}}</a></li>
+        {{#if rentingsHasPackageS}}
+          <div role="tabpanel" class="tab-pane active" id="{{rentingsTabOneS}}">{{{rentingsTextOneS}}}</div>
         {{/if}}
-        {{#if hasAddTextTwo}}
-          <li role="presentation"><a href="#{{addTextTabTwo}}" aria-controls="settings" role="tab" data-toggle="tab">{{addTextTwo}}</a></li>
+        {{#if rentingsHasPackageM}}
+          <div role="tabpanel" class="tab-pane active" id="{{rentingsTabOneM}}">{{{rentingsTextOneM}}}</div>
+          <div role="tabpanel" class="tab-pane" id="{{rentingsTabTwoM}}">{{{rentingsTextTwoM}}}</div>
+        {{/if}}
+        {{#if rentingsHasPackageL}}
+          <div role="tabpanel" class="tab-pane active" id="{{rentingsTabOneL}}">{{{rentingsTextOneL}}}</div>
+          <div role="tabpanel" class="tab-pane" id="{{rentingsTabTwoL}}">{{{rentingsTextTwoL}}}</div>
+          <div role="tabpanel" class="tab-pane" id="{{rentingsTabThreeL}}">{{{rentingsTextThreeL}}}</div>
+        {{/if}}
+        {{#if rentingsHasPackageXL}}
+          <div role="tabpanel" class="tab-pane active" id="{{rentingsTabOneXL}}">{{{rentingsTextOneXL}}}</div>
+          <div role="tabpanel" class="tab-pane" id="{{rentingsTabTwoXL}}">{{{rentingsTextTwoXL}}}</div>
+          <div role="tabpanel" class="tab-pane" id="{{rentingsTabThreeXL}}">{{{rentingsTextThreeXL}}}</div>
+          <div role="tabpanel" class="tab-pane" id="{{rentingsTabFourXL}}">{{{rentingsTextFourXL}}}</div>
+        {{/if}}
+        {{#if rentingsHasAddTextOne}}
+          <div role="tabpanel" class="tab-pane" id="{{rentingsAddTextTabOne}}">{{{rentingsAddTextOne}}}</div>
+        {{/if}}
+        {{#if rentingsHasAddTextTwo}}
+          <div role="tabpanel" class="tab-pane" id="{{rentingsAddTextTabTwo}}">{{{rentingsAddTextTwo}}}</div>
         {{/if}}
       </div>
-    {{/if}}
-  </div>
-</div>
-
-<div class="spacer-20 hidden-md hidden-lg"></div>
-<div class="row hidden-xs">
-  <div class="col-sm-3 hidden-md hidden-lg">
-    {{#if rentingsUrl}}
-      <h3>Website</h3>
-      <p>
-        <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>
-      </p>
-    {{/if}}
-  </div>
-  <div class="col-sm-3 hidden-md hidden-lg text-center">
-    {{#if socialMedia}}
-      <h3>Social Media</h3>
-      <p>
-        <span class="socialIcons">
-          {{#with getCustomer}}
-            {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
-            {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
-            {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
-            {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
-          {{/with}}
-        </span> 
-      </p>
-    {{/if}}    
-  </div>
-  <div class="col-sm-3 hidden-md hidden-lg text-center">
-    {{#if hasGalleryM}}
-      <h3>Galerie</h3>
-      kommt noch...
-    {{/if}}
-  </div>
-  <div class="col-sm-3 hidden-md hidden-lg text-right">
-    {{#if hasVideo}}
-      <h3>Video</h3>
-      <p>
-        kommt noch...
-      </p>
-    {{/if}}
-  </div>
-</div>
-</template>
-
-
-
-<template name="gallery">
-  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-    <div class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body next"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left prev">
-                        <i class="glyphicon glyphicon-chevron-left"></i>
-                        Previous
-                    </button>
-                    <button type="button" class="btn btn-primary next">
-                        Next
-                        <i class="glyphicon glyphicon-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
     </div>
+  </div>  
+<!-- footer SM -->  
+  <div class="spacer-20 hiden-xs hidden-md hidden-lg"></div>
+  <div class="row hidden-xs hidden-md hidden-lg">
+    <div class="col-sm-3">
+      {{#if rentingsUrl}}
+        <h3>Website</h3>
+        <p>
+          <i class="fa fa-arrow-circle-o-right"></i> <a href="http://{{rentingsUrl}}" target="_blank">{{rentingsUrl}}</a>
+        </p>
+      {{/if}}
+    </div>
+    <div class="col-sm-3 text-center">
+      {{#if rentingsHasSocialMedia}}
+        <h3>Social Media</h3>
+        <p>
+          <span class="socialIcons">
+            {{#with getCustomer}}
+              {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
+              {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
+              {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
+              {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
+            {{/with}}
+          </span> 
+        </p>
+      {{/if}}    
+    </div>
+    <div class="col-sm-3 text-center">
+      {{#if rentingsHasGalleryM}}
+        <h3>Galerie</h3>
+        Galerie (klein) kommt noch...
+      {{/if}}
+      {{#if rentingsHasGalleryM}}
+        <h3>Galerie</h3>
+        Galerie (groß) kommt noch...
+      {{/if}}
+    </div>
+    <div class="col-sm-3 text-right">
+      {{#if rentingsHasVideo}}
+        <h3>Video</h3>
+        <p>
+          kommt noch...
+        </p>
+      {{/if}}
+    </div>
+  </div>
+<!-- END footer SM -->
+<!-- END Template for SM MD LG -->
 </div>
-<!-- >
-<div id="links">
-    <a href="/img/lenggries-ski.jpg" title="Banana" data-gallery>
-        <img src="/img/lenggries-ski.jpg" alt="Banana">
-    </a>
-    <a href="/img/oberstdorf1.jpg" title="Apple" data-gallery>
-        <img src="/img/oberstdorf1.jpg" alt="Apple">
-    </a>
-    <a href="/img/oberstdorf2.jpg" title="Orange" data-gallery>
-        <img src="/img/oberstdorf2.jpg" alt="Orange">
-    </a>
-</div> -->
 </template>
