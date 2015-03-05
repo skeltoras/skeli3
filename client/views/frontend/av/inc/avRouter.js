@@ -47,14 +47,14 @@ Router.route('/av/mediadaten', function (){
   controller: 'AVController'
 });
 
-Router.route('/av/kd/:customersSiteUrl', function (){ 
+Router.route('/av/kd/:avSiteUrl', function (){ 
   this.render('kdSingle', {
     waitOn: function() {
       //return Meteor.subscribe('rentings');
     },
     data: function () {
       //Meteor.subscribe('rentings');
-      return Customers.findOne({customersSiteUrl: this.params.customersSiteUrl});
+      return AvCustomers.findOne({avSiteUrl: this.params.avSiteUrl});
     },
     action: function() {
       if (this.ready())

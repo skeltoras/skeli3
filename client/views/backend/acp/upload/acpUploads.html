@@ -1,0 +1,23 @@
+<template name="acpUploads">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="page-header">Uploads</h1>
+      </div>
+    </div>
+    <div class="spacer-20"></div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3>Upload AV-Kunden <small>Datensätze: {{getAvCustomerCount}}</small></h3></div>
+          <div class="panel-body">
+            <form role="form" id="uploadAvCustomers">
+              <input type="file" id="fileUploadAvCustomers">
+              <button type="submit" class="btn btn-default">Hochladen</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

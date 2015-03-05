@@ -15,10 +15,14 @@ Template.kdSingle.rendered = function(){
 //-- template helpers                            
 Template.kdSingle.helpers({
   getFullData: function() {
-    return false;
+    return true;
   }
 });
 
 //-- template events
-Template.kdSingle.events({ 
+Template.kdSingle.events({
+  'click .back': function(e) {
+    e.preventDefault();
+    window.history.back();
+  } 
 });

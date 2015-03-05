@@ -6,34 +6,37 @@
     {{#if getFullData}}
       <div class="col-sm-4">
           <div class="panel panel-default panel-av-detail">
-            <div class="panel-heading"><h3>{{customerName}}</h3></div>
+            <div class="panel-heading"><h3>{{avName1}} {{#if avName2}}{{else}}{{avLegalForm}}{{/if}}</h3></div>
             <div class="panel-body">
               <p>
-                Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden.
+                {{avShortinfo}}
               </p>
               <h3>Adresse</h3>
               <p>
-                {{street}}<br>
-                {{plz}} {{city}}<br>
-                {{country}}
+                {{#if avName2}}{{avName2}} {{avLegalForm}}<br>{{/if}}
+                {{#if avStreet}}{{avStreet}}<br>{{/if}}
+                {{#if avPlz}}{{avPlz}} {{avCity}}<br>{{/if}}
+                {{#if country}}{{avCountry}}{{/if}}
               </p>
               <h3>Kontakt</h3>
               <p>
-                <i class="fa fa-phone"></i> {{telephone}}<br>
-                <i class="fa fa-fax"></i> {{telefax}}<br>
-                <i class="fa fa-envelope"></i> {{emailOff}}
+                {{#if avTelephoneFormal}}<i class="fa fa-phone"></i> {{avTelephoneFormal}}<br>{{/if}}
+                {{#if avTelefax}}<i class="fa fa-fax"></i> {{avTelefax}}<br>{{/if}}
+                {{#if avMailFormal}}<i class="fa fa-envelope"></i> {{avMailFormal}}{{/if}}
               </p>
+              {{#if avUrl}}
               <h3>Website</h3>
               <p>
-                <i class="fa fa-arrow-circle-o-right"></i> {{url}}<br>
+                <i class="fa fa-arrow-circle-o-right"></i> {{avUrl}}<br>
               </p>
+              {{/if}}
               <h3>Social Media</h3>
               <p>
                 <span class="socialIcons">
-                    {{#if socialFacebook}}<a href="https://www.facebook.com/{{socialFacebook}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
-                    {{#if socialGplus}}<a href="https://plus.google.com/u/0/+{{socialGplus}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
-                    {{#if socialTwitter}}<a href="https://twitter.com/{{socialTwitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
-                    {{#if socialYoutube}}<a href="https://www.youtube.com/user/{{socialYoutube}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
+                    {{#if avFacebookData}}<a href="https://www.facebook.com/{{avFacebookData}}" target="_blank"><i class="fa fa-facebook-square"></i></a>{{/if}}
+                    {{#if avGplusData}}<a href="https://plus.google.com/u/0/+{{avGplusData}}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>{{/if}}
+                    {{#if avTwitterData}}<a href="https://twitter.com/{{avTwitterData}}" target="_blank"><i class="fa fa-twitter-square"></i></a>{{/if}}                                                              
+                    {{#if avYoutubeData}}<a href="https://www.youtube.com/user/{{avYoutubeData}}" target="_blank"><i class="fa fa-youtube-square"></i></a>{{/if}}
                 </span> 
               </p>
               <h3>Bilder</h3>
@@ -45,7 +48,7 @@
               <h3>Bereich(e)</h3>
               <p>
               </p>
-              <a class="btn btn-default btn-panel pull-right" href="/av/kd/{{customersSiteUrl}}"><i class="fa fa-angle-double-left"></i> Zurück</a>          
+              <a class="btn btn-default btn-panel pull-right back"><i class="fa fa-angle-double-left"></i> Zurück</a>          
             </div>
           </div>
       </div>
@@ -116,27 +119,30 @@
       </div>
         <div class="col-sm-4">
           <div class="panel panel-default panel-av-detail">
-            <div class="panel-heading"><h3>{{customerName}}</h3></div>
+            <div class="panel-heading"><h3>{{avName1}} {{#if avName2}}{{else}}{{avLegalForm}}{{/if}}</h3></div>
             <div class="panel-body">
               <p>
-                Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden.
+                {{avShortinfo}}
               </p>
               <h3>Adresse</h3>
               <p>
-                {{street}}<br>
-                {{plz}} {{city}}<br>
-                {{country}}
+                {{#if avName2}}{{avName2}} {{avLegalForm}}<br>{{/if}}
+                {{#if avStreet}}{{avStreet}}<br>{{/if}}
+                {{#if avPlz}}{{avPlz}} {{avCity}}<br>{{/if}}
+                {{#if country}}{{avCountry}}{{/if}}
               </p>
               <h3>Kontakt</h3>
               <p>
-                <i class="fa fa-phone"></i> {{telephone}}<br>
-                <i class="fa fa-fax"></i> {{telefax}}<br>
-                <i class="fa fa-envelope"></i> {{emailOff}}
+                {{#if avTelephoneFormal}}<i class="fa fa-phone"></i> {{avTelephoneFormal}}<br>{{/if}}
+                {{#if avTelefax}}<i class="fa fa-fax"></i> {{avTelefax}}<br>{{/if}}
+                {{#if avMailFormal}}<i class="fa fa-envelope"></i> {{avMailFormal}}{{/if}}
               </p>
+              {{#if avUrl}}
               <h3>Website</h3>
               <p>
-                <i class="fa fa-arrow-circle-o-right"></i> {{url}}<br>
+                <i class="fa fa-arrow-circle-o-right"></i> {{avUrl}}<br>
               </p>
+              {{/if}}
               <h3>Bereich(e)</h3>
               <p>
               </p>

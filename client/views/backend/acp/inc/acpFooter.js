@@ -1,23 +1,23 @@
 //since v0.1.1
 
 //-- template created functions
-Template.footer.created = function(){
+Template.acpFooter.created = function(){
 };
 
 //-- template destroyed functions
-Template.footer.destroyed = function(){
+Template.acpFooter.destroyed = function(){
 };
 
 //-- template rendered functions
-Template.footer.rendered = function(){
+Template.acpFooter.rendered = function(){
 };
 
 //-- template helpers                            
-Template.footer.helpers({
+Template.acpFooter.helpers({
 });
 
 //-- template events
-Template.footer.events({
+Template.acpFooter.events({
   'click .scroll-top': function() {
     $("html, body").animate({ scrollTop: 0 }, "slow");  
   } 

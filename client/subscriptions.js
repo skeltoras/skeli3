@@ -4,3 +4,4 @@ Meteor.subscribe('customers');
 Meteor.subscribe('portals');
 //Meteor.subscribe('tours');
 Meteor.subscribe('regions');
+//Meteor.subscribe('avcustomers');

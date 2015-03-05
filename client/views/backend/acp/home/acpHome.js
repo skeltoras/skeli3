@@ -1,24 +1,24 @@
 //since v0.1.1
 
 //-- template created functions
-Template.avHome.created = function(){
+Template.acpHome.created = function(){
 };
 
 //-- template destroyed functions
-Template.avHome.destroyed = function(){
+Template.acpHome.destroyed = function(){
 };
 
 //-- template rendered functions
-Template.avHome.rendered = function(){
+Template.acpHome.rendered = function(){
 };
 
 //-- template helpers                            
-Template.avHome.helpers({
+Template.acpHome.helpers({
   getRandomCustomer: function() {
     return AvCustomers.find({}, {limit: 15});
   }
 });
 
 //-- template events
-Template.avHome.events({ 
+Template.acpHome.events({ 
 });
