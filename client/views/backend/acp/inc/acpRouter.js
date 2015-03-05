@@ -19,16 +19,27 @@ Router.route('/acp/upload', function (){
   controller: 'AcpController'
 });
 
-Router.route('/acp/customers', function (){ 
+Router.route('/acp/kdn', function (){ 
   this.render('acpCustomerlist');
 }, {
   name: 'acp.customers',
   controller: 'AcpController'
 });
 
-Router.route('/acp/customernew', function (){ 
+Router.route('/acp/kd/new', function (){ 
   this.render('acpCustomerNew');
 }, {
   name: 'acp.customer.new',
+  controller: 'AcpController'
+});
+
+Router.route('/acp/kd/edit/:_id', function (){ 
+  this.render('acpCustomerEdit', {
+    data: function() {
+      return AvCustomers.findOne({_id: this.params._id});
+    }
+  });
+}, {
+  name: 'acp.customer.edit',
   controller: 'AcpController'
 });
