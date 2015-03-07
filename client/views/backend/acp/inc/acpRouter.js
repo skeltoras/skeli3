@@ -43,3 +43,17 @@ Router.route('/acp/kd/edit/:_id', function (){
   name: 'acp.customer.edit',
   controller: 'AcpController'
 });
+
+Router.route('/acp/cl', function (){ 
+  this.render('acpCountryList');
+}, {
+  name: 'acp.countrylist',
+  controller: 'AcpController'
+});
+
+Router.route('/acp/acl', function (){ 
+  this.render('acpAddressChaptersList');
+}, {
+  name: 'acp.adresschapterslist',
+  controller: 'AcpController'
+});

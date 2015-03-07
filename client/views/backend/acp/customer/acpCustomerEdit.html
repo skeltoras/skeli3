@@ -63,7 +63,6 @@
     <h3>{{avCustomerName}} {{#if avIsFeatured}}<span class="pull-right"><i class="fa fa-star featured"></i></span>{{/if}}</h3>
     <p>
       {{#if avDepartment}}{{avDepartment}}<br>{{/if}}
-      {{#if avDepartment}}{{avDepartment}}<br>{{/if}}
       {{#if avPostAddition}}{{avPostAddition}}<br>{{/if}}
       {{#if avStreet}}{{avStreet}}<br>{{/if}}
       {{#if avPlz}}{{avPlz}}<br>{{/if}}
@@ -84,6 +83,15 @@
     </p>
     <p>
       {{#if avShortinfo}}{{avShortinfo}}{{/if}}
+    </p>
+    <p>
+      Adresskapitel: {{#each avAddressChapters}}{{#if isPrimary}}<strong>{{short}}</strong>, {{else}}{{short}}, {{/if}}{{/each}}
+    </p>
+    <p>
+      Verbände: {{#each avAssociations}}{{short}}, {{/each}}
+    </p>
+    <p>
+      Sperren: {{#each avBlockIndicators}}{{short}}, {{/each}}
     </p>
   </div>
   <div class="col-sm-6">

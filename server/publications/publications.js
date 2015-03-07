@@ -18,3 +18,19 @@ Meteor.publish('tours', function() {
 Meteor.publish('regions', function() {
   return Regions.find();
 });
+
+Meteor.publish('countries', function() {
+  return Countries.find();
+});
+
+Meteor.publish('addresschapters', function() {
+  return AddressChapters.find();
+});
+
+Meteor.publish('avassociations', function() {
+  return AvAssociations.find();
+});
+
+Meteor.publish('avblockindicators', function() {
+  return avBlockIndicators.find();
+});
